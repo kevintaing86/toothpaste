@@ -74,6 +74,7 @@ app.use(lusca.xssProtection(true));
  */
 app.get('/entry', entryController.test);
 app.get('/notifications', notificationsController.test);
+app.post('/entry', entryController.postNewEntry);
 
 
  /**
