@@ -72,7 +72,7 @@ app.use(lusca.xssProtection(true));
 /**
  * Primary app routes.
  */
-app.get('/entry', entryController.test);
+app.get('/entry', entryController.getEntries);
 app.get('/notifications', notificationsController.test);
 app.post('/entry', entryController.postNewEntry);
 

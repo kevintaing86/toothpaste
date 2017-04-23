@@ -15,7 +15,7 @@ exports.postNewEntry = (req, res) => {
     link: req.body.link,
     created_at: { type: Date, default: Date.now }
   });
-  console.log(newEntry);
+
   newEntry.save((err) => {
     if(err){
       res.status(400).send(err);
@@ -23,3 +23,12 @@ exports.postNewEntry = (req, res) => {
     res.sendStatus(201);
   });
 };
+
+exports.getEntries = (req, res) => {
+  Entry.find({}, (err, result) => {
+    if(err){
+      res.status(400).send(err);
+    }
+    res.status(200).send(result);
+  });
+}
