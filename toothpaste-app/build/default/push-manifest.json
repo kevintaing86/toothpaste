@@ -221,6 +221,10 @@
     "bower_components/promise-polyfill/Promise.js": {
       "type": "script",
       "weight": 1
+    },
+    "bower_components/iron-icons/iron-icons.html": {
+      "type": "document",
+      "weight": 1
     }
   },
   "src/tp-add.html": {
@@ -382,6 +386,10 @@
     },
     "bower_components/promise-polyfill/Promise.js": {
       "type": "script",
+      "weight": 1
+    },
+    "bower_components/iron-icons/iron-icons.html": {
+      "type": "document",
       "weight": 1
     },
     "src/shared-styles.html": {

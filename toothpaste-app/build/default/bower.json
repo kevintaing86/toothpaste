@@ -20,7 +20,8 @@
     "iron-ajax": "PolymerElements/iron-ajax#^1.4.4",
     "iron-form": "PolymerElements/iron-form#^1.1.4",
     "paper-item": "PolymerElements/paper-item#^1.2.2",
-    "paper-input": "PolymerElements/paper-input#^1.1.24"
+    "paper-input": "PolymerElements/paper-input#^1.1.24",
+    "iron-icons": "PolymerElements/iron-icons#^1.2.1"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"
