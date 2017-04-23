@@ -1,6 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="../bower_components/iron-ajax">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="tp-entries">
@@ -32,7 +32,7 @@
         @apply(--paper-card-actions);
       }
     </style>
-    <template is="dom-repeat" items="{{entries}}">
+    <template is="dom-repeat" items="[[entries]]">
       <div class="card card-entry">
         <div class="card-content">
           <h1>{{item.title}}</h1>
@@ -42,37 +42,35 @@
           <paper-button>View</paper-button>
         </div>
       </div>
-      <iron-ajax
-        id="requestEntries"
-        url="https://toothpaste2017.herokuapp.com/entries"
-        handle-as="json"
-        on-response="handleEntryRequest"
-      ></iron-ajax>
     </template>
+    <iron-ajax
+      id="requestEntries"
+      url="https://toothpaste2017.herokuapp.com/entries"
+      params='{"type":"all"}'
+      handle-as="json"
+      on-response="handleEntryRequest"
+    ></iron-ajax>
   </template>
 
   <script>
     Polymer({
       is: 'tp-entries',
       properties: {
-        data: Object
+        entries: Array
       },
 
       ready: function() {
         this.$.requestEntries.generateRequest();
+
         this.entries = [
             {title: 'HackWesTX', description: 'BLAHBLAHBLAHBLAH'},
             {title: 'HackWesTX2', description: 'BLAHBLAHBLAHBLAH2'},
             {title: 'HackWesTX3', description: 'BLAHBLAHBLAHBLAH3'},
         ];
-     }
-
-     created: function() {
-       console.log("~~", this);
-     }
+     },
 
      handleEntryRequest: function(data) {
-       console.log(data);
+       this.entries = data.detail.response;
      }
     });
   </script>
