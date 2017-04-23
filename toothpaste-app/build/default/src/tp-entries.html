@@ -37,6 +37,8 @@
         <div class="card-content">
           <h1>{{item.title}}</h1>
           <p>{{item.description}}</p>
+          <p>{{item.email}}</p>
+          <p>{{item.link}}</p>
         </div>
         <div class="card-actions">
           <paper-button>View</paper-button>
@@ -64,7 +66,7 @@
      },
 
      handleEntryRequest: function(data) {
-       this.entries = data.detail.response;
+       this.entries = data.detail.response.reverse();
      }
     });
   </script>
