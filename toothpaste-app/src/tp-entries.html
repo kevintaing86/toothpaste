@@ -1,6 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html"/>
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="tp-entries">
@@ -36,9 +37,9 @@
       <div class="card card-entry">
         <div class="card-content">
           <h1>{{item.title}}</h1>
-          <p>{{item.description}}</p>
-          <p>{{item.email}}</p>
-          <p>{{item.link}}</p>
+          <p><iron-icon icon="subject"></iron-icon>{{item.description}}</p>
+          <p><iron-icon icon="mail"></iron-icon>{{item.email}}</p>
+          <p><iron-icon icon="open-in-new"></iron-icon>{{item.link}}</p>
         </div>
         <div class="card-actions">
           <paper-button>View</paper-button>
