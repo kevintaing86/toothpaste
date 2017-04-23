@@ -1,0 +1,151 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+--><html><head><link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
+</head><body><dom-module id="tp-add">
+    <template>
+        <style>
+        :host {
+          --app-primary-color: #42a5f4;
+          --app-primary-light: #80d6ff;
+          --app-primary-dark: #0077c1;
+          --app-primary-alt:#cfd8dc;
+          --app-secondary-color: #ff5252;
+          --app-secondary-light: #ff867f;
+          --app-secondary-dark: #c50e29;
+          --app-solid-black:black;
+          --app-text-secondary: #ffffff;
+          --app-text-primary: #000000;
+          display: block;
+        }
+            paper-material {
+                max-width: 800px;
+                padding:40px;
+                background-color: #FAFAFA;
+                margin: auto;
+            }
+            form {
+                padding-top: 20px;
+            }
+            paper-input-container.tp-style {
+                --paper-input-container-color: var(--app-secondary-color);
+                --paper-input-container-focus-color: var(--app-secondary-color);
+                --paper-input-container-invalid-color: var(--app-secondary-dark);
+                --paper-input-container-input-color: var(--app-primary-dark);
+            }
+            paper-button {
+                background-color: var(--app-secondary-color);
+                color: #FAFAFA;
+                margin-bottom: 40px;
+            }
+            .button {
+                margin: auto;
+                width: 85.5px;
+                align-content: center;
+            }
+            h2 {
+                color: #757575;
+            }
+        </style>
+            <form is="iron-form" method="post" action="https://toothpaste2017.herokuapp.com/entry" id="addentry">
+                <paper-material>
+                    <h2>Submit an Entry</h2>
+                    <paper-input-container class="tp-style">
+                        <label>Email</label>
+                      <input is="iron-input" class="tp-style" name="email" label="Email" error-message="{{error_email}}">
+                    </paper-input-container>
+                  <paper-input-container class="tp-style">
+                   <label>Title</label>
+                    <input class="tp-style" name="title" label="Title">
+                  </paper-input-container>
+                  <paper-input-container class="tp-style">
+                    <label>Description</label>
+                    <input class="tp-style" name="description" label="Description">
+                  </paper-input-container>
+                  <paper-input-container class="tp-style">
+                    <label>Link</label>
+                    <input class="tp-style" name="Link" label="Link">
+                  </paper-input-container>
+                </paper-material><br>
+                <div class="button">
+                    <paper-button raised="" on-tap="_formSubmit">Submit</paper-button>
+                </div>
+                <div class="output"></div>
+            </form>
+    </template>
+    <script>
+        Polymer({
+            is: 'tp-add',
+            properties: {
+                prop1: {
+                    type: String,
+                    value: 'leesander.com',
+                },
+                error_email: {
+                    type: String,
+                    value:"Email is not valid!"
+                },
+            },
+            // Element Lifecycle
+            ready: function() {
+                //inputLocal.source= this.states;
+            },
+            attached: function() {
+                // `attached` fires once the element and its parents have been inserted
+                // into a document.
+                //
+                // This is a good place to perform any work related to your element's
+                // visual state or active behavior (measuring sizes, beginning animations,
+                // loading resources, etc).
+            },
+            detached: function() {
+                // The analog to `attached`, `detached` fires when the element has been
+                // removed from a document.
+                //
+                // Use this to clean up anything you did in `attached`.
+            },
+            listeners: {
+                'addentry.iron-form-response': '_formResponse',
+                'addentry.iron-form-submit': '_formSubmit',
+                'addentry.iron-form-presubmit': '_formPresubmit',
+                'addentry.iron-form-error': '_formError',
+            },
+            _submit(event) {
+                document.getElementById('addentry').submit();
+            },
+            _formSubmit: function(event) {
+                this.$.getElementById('addentry').submit();
+                console.log("Form was submitted");
+            },
+            _formPresubmit: function(event) {
+                console.log("Form is about to be submitted");
+                this.querySelector('.output').innerHTML = JSON.stringify(event);
+            },
+            _formResponse: function(event) {
+                console.log('There was a response');
+            },
+            _formError: function(event) {
+                console.log('Form Error, no actual response');
+            }
+        });
+        function submitForm() {
+         document.getElementById('addentry').submit();
+        }
+    </script>
+</dom-module>
+</body></html>
