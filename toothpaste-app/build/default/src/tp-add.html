@@ -71,7 +71,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     </paper-input-container>
                   <paper-input-container class="tp-style">
                    <label>Title</label>
-                    <input class="tp-style" name="Title" label="Title">
+                    <input class="tp-style" name="title" label="Title">
                   </paper-input-container>
                   <paper-input-container class="tp-style">
                     <label>Description</label>
@@ -133,7 +133,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             },
             _formPresubmit: function(event) {
                 console.log("Form is about to be submitted");
-                this.querySelector('.output').innerHTML = JSON.stringify(event);
+                this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
             },
             _formResponse: function(event) {
                 console.log('There was a response');
@@ -143,7 +143,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             }
         });
         function submitForm() {
-         document.getElementById('addentry').submit();
+         document.getElementById('form').submit();
         }
     </script>
 </dom-module>
