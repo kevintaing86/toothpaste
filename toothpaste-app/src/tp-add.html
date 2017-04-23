@@ -72,7 +72,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     </paper-input-container>
                   <paper-input-container class="tp-style">
                    <label>Title</label>
-                    <input class="tp-style" name="Title" label="Title" ></input>
+                    <input class="tp-style" name="title" label="Title" ></input>
                   </paper-input-container>
                   <paper-input-container class="tp-style">
                     <label>Description</label>
@@ -84,7 +84,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   </paper-input-container>
                 </paper-material><br>
                 <div class="button">
-                    <paper-button raised on-tap="submitForm()">Submit</paper-button>
+                    <paper-button raised on-tap="_submit">Submit</paper-button>
                 </div>
                 <div class="output"></div>
             </form>
@@ -127,9 +127,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 'addentry.iron-form-error': '_formError',
             },
             _submit(event) {
-                this.$.getElementById('addentry').submit();
+                document.getElementById('addentry').submit();
             },
             _formSubmit: function(event) {
+                this.$.getElementById('addentry').submit();
                 console.log("Form was submitted");
             },
             _formPresubmit: function(event) {
@@ -144,7 +145,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             }
         });
         function submitForm() {
-         document.getElementById('addentry').submit();
+         document.getElementById('form').submit();
         }
     </script>
 </dom-module>
