@@ -12,8 +12,7 @@ exports.postNewEntry = (req, res) => {
     title: req.body.title,
     description: req.body.description,
     email: req.body.email,
-    link: req.body.link,
-    created_at: { type: Date, default: Date.now }
+    link: req.body.link
   });
 
   newEntry.save((err) => {

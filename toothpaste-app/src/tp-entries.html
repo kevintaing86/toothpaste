@@ -37,9 +37,10 @@
       <div class="card card-entry">
         <div class="card-content">
           <h1>{{item.title}}</h1>
-          <iron-icon icon="subject"></iron-icon><p>{{item.description}}</p>
-          <p><iron-icon icon="mail"></iron-icon>{{item.email}}</p>
-          <p><iron-icon icon="open-in-new"></iron-icon>{{item.link}}</p>
+          <p>{{item.description}}</p>
+          <p>{{item.email}}</p>
+          <p>{{item.link}}</p>
+          <p>Posted on: {{item.created_at}}</p>
         </div>
         <div class="card-actions">
           <paper-button>View</paper-button>
