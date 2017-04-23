@@ -5,14 +5,16 @@
     "src/tp-home.html",
     "src/tp-add.html",
     "src/tp-push.html",
+    "src/tp-entries.html",
+    "src/tp-entry.html",
     "src/tp-view404.html"
   ],
-  "sourceGlobs": [
+  "sources": [
     "src/**/*",
     "images/**/*",
     "bower.json"
   ],
-  "includeDependencies": [
+  "extraDependencies": [
     "manifest.json",
     "bower_components/webcomponentsjs/webcomponents-lite.min.js"
   ]

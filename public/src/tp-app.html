@@ -6,9 +6,7 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-<link rel="import" href="../bower_components/polymer/polymer.html">
+--><html><head><link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
 <link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
@@ -22,7 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="tp-icons.html">
 
-<dom-module id="tp-app">
+</head><body><dom-module id="tp-app">
   <template>
     <style>
       :host {
@@ -76,13 +74,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <app-location route="{{route}}"></app-location>
-    <app-route
-        route="{{route}}"
-        pattern="/:page"
-        data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
+    <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
 
-    <app-drawer-layout fullbleed>
+    <app-drawer-layout fullbleed="">
       <!-- Drawer content -->
       <app-drawer id="drawer">
         <app-toolbar></app-toolbar>
@@ -94,20 +88,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </app-drawer>
 
       <!-- Main content -->
-      <app-header-layout has-scrolling-region>
+      <app-header-layout has-scrolling-region="">
 
-        <app-header condenses reveals effects="waterfall">
+        <app-header condenses="" reveals="" effects="waterfall">
           <app-toolbar>
-            <paper-icon-button src="../images/logo.svg" drawer-toggle></paper-icon-button>
-            <div main-title>Toothpaste</div>
+            <paper-icon-button src="../images/logo.svg" drawer-toggle=""></paper-icon-button>
+            <div main-title="">Toothpaste</div>
           </app-toolbar>
         </app-header>
 
-        <iron-pages
-            selected="[[page]]"
-            attr-for-selected="name"
-            fallback-selection="view404"
-            role="main">
+        <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="view404" role="main">
           <tp-home name="home"></tp-home>
           <tp-add name="add"></tp-add>
           <tp-push name="push"></tp-push>
@@ -153,3 +143,4 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     });
   </script>
 </dom-module>
+</body></html>
