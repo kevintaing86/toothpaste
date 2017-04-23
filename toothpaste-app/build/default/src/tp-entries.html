@@ -38,10 +38,18 @@
       <div class="card card-entry">
         <div class="card-content">
           <h1>{{item.title}}</h1>
-          <iron-icon icon="menu">{{item.description}}</iron-icon>
-          <iron-icon icon="drafts">{{item.email}}</iron-icon>
-          <iron-icon icon="language">{{item.link}}</iron-icon>
-          <iron-icon icon="alarm">Posted on: {{item.created_at}}</iron-icon>
+          <div>
+            <iron-icon icon="chrome-reader-mode"></iron-icon><span> {{item.description}}</span>
+          </div>
+          <div>
+            <iron-icon icon="drafts"></iron-icon><span> {{item.email}}</span>
+          </div>
+          <div>
+            <iron-icon icon="language"></iron-icon><span> {{item.link}}</span>
+          </div>
+          <div>
+             <iron-icon icon="alarm"></iron-icon><span> Posted on: {{item.created_at}}</span>
+          </div>
         </div>
         <div class="card-actions">
           <paper-button>View</paper-button>
