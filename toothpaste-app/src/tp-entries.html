@@ -1,5 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-ajax">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="tp-entries">
@@ -41,6 +42,13 @@
           <paper-button>View</paper-button>
         </div>
       </div>
+      <iron-ajax
+        id="requestEntries",
+        url="toothpaste2017.herokuapp.com/entries",
+        params="{}",
+        handle-as="json",
+        on-response="handleEntryRequest"
+      ></iron-ajax>
     </template>
   </template>
 
@@ -52,11 +60,17 @@
       },
 
       ready: function() {
+        this.$.requestEntries.generateRequest();
+
         this.entries = [
             {title: 'HackWesTX', description: 'BLAHBLAHBLAHBLAH'},
             {title: 'HackWesTX2', description: 'BLAHBLAHBLAHBLAH2'},
             {title: 'HackWesTX3', description: 'BLAHBLAHBLAHBLAH3'},
         ];
+     }
+
+     handleEntryRequest: function(data) {
+       console.log(data);
      }
     });
   </script>
