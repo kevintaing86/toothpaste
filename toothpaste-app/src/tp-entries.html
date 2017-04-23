@@ -60,12 +60,15 @@
 
       ready: function() {
         this.$.requestEntries.generateRequest();
-        console.log("~~~~",this.$.requestEntries);
         this.entries = [
             {title: 'HackWesTX', description: 'BLAHBLAHBLAHBLAH'},
             {title: 'HackWesTX2', description: 'BLAHBLAHBLAHBLAH2'},
             {title: 'HackWesTX3', description: 'BLAHBLAHBLAHBLAH3'},
         ];
+     }
+
+     created: function() {
+       console.log("~~", this);
      }
 
      handleEntryRequest: function(data) {
