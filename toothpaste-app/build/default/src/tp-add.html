@@ -62,7 +62,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 color: #757575;
             }
         </style>
-            <form is="iron-form" method="post" action="/" id="addEntry">
+            <form is="iron-form" method="post" action="https://toothpaste2017.herokuapp.com/entry" id="addEntry">
                 <paper-material>
                     <h2>Submit an Entry</h2>
                     <paper-input-container class="tp-style">
@@ -83,7 +83,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   </paper-input-container>
                 </paper-material><br>
                 <div class="button">
-                    <paper-button raised="" on-tap="_submit">Submit</paper-button>
+                    <paper-button raised="" on-tap="submitForm()">Submit</paper-button>
                 </div>
                 <div class="output"></div>
             </form>
@@ -126,14 +126,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 'addEntry.iron-form-error': '_formError',
             },
             _submit(event) {
-                Polymer.dom(event).localTarget.parentElement.parentElement.submit();
+                this.$.getElementById('addEntry').submit();
             },
             _formSubmit: function(event) {
                 console.log("Form was submitted");
             },
             _formPresubmit: function(event) {
                 console.log("Form is about to be submitted");
-                this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
+                this.querySelector('.output').innerHTML = JSON.stringify(event);
             },
             _formResponse: function(event) {
                 console.log('There was a response');
@@ -142,6 +142,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 console.log('Form Error, no actual response');
             }
         });
+        function submitForm() {
+          document.getElementById('form').submit();
+        }
     </script>
 </dom-module>
 </body></html>
