@@ -75,7 +75,7 @@ app.use(lusca.xssProtection(true));
 app.use(express.static(path.join(__dirname, 'toothpaste-app/build/default'), { maxAge: 31557600000 }));
 app.get('/entries', entryController.getEntries);
 app.get('/notifications', notificationsController.test);
-app.post('/entry', entryController.postNewEntry);
+app.post('/', entryController.postNewEntry);
 
 
  /**

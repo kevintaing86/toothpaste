@@ -205,10 +205,142 @@
     "bower_components/paper-styles/shadow.html": {
       "type": "document",
       "weight": 1
+    },
+    "bower_components/iron-ajax/iron-ajax.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/iron-ajax/iron-request.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/promise-polyfill/promise-polyfill-lite.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/promise-polyfill/Promise.js": {
+      "type": "script",
+      "weight": 1
     }
   },
   "src/tp-add.html": {
     "src/shared-styles.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/iron-form/iron-form.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/iron-ajax/iron-ajax.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/iron-ajax/iron-request.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/promise-polyfill/promise-polyfill-lite.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/promise-polyfill/Promise.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "bower_components/paper-item/paper-item.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-item/paper-item-behavior.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-item/paper-item-shared-styles.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-styles/typography.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/font-roboto/roboto.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-input/paper-textarea.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/iron-autogrow-textarea/iron-autogrow-textarea.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/iron-validatable-behavior/iron-validatable-behavior.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/iron-form-element-behavior/iron-form-element-behavior.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-input/paper-input-behavior.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-input/paper-input-char-counter.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-input/paper-input-addon-behavior.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-input/paper-input-container.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-input/paper-input-error.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-input/paper-input.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/iron-input/iron-input.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/iron-a11y-announcer/iron-a11y-announcer.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-button/paper-button.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-behaviors/paper-button-behavior.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-material/paper-material-shared-styles.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-styles/shadow.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-card/paper-card.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/iron-image/iron-image.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/paper-material/paper-material.html": {
       "type": "document",
       "weight": 1
     }
@@ -234,6 +366,22 @@
     },
     "bower_components/paper-styles/shadow.html": {
       "type": "document",
+      "weight": 1
+    },
+    "bower_components/iron-ajax/iron-ajax.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/iron-ajax/iron-request.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/promise-polyfill/promise-polyfill-lite.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/promise-polyfill/Promise.js": {
+      "type": "script",
       "weight": 1
     },
     "src/shared-styles.html": {
