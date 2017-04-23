@@ -43,6 +43,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: var(--app-text-secondary);
         background-color: var(--app-primary-color);
       }
+      app-toolbar paper-icon-button  {
+        font-size: 52px;
+        height: 52px;
+        width: 52px;
+      }
       app-header paper-icon-button {
         --paper-icon-button-ink-color: white;
       }
@@ -76,7 +81,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
       <app-drawer id="drawer">
-        <app-toolbar>Menu</app-toolbar>
+        <app-toolbar></app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="home" href="/home">Home</a>
           <a name="add" href="/add">Add Event</a>
@@ -89,7 +94,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
-            <paper-icon-button icon="tp-icons:menu" drawer-toggle></paper-icon-button>
+            <paper-icon-button src="../images/logo.svg" drawer-toggle></paper-icon-button>
             <div main-title>Toothpaste</div>
           </app-toolbar>
         </app-header>
