@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const entrySchema = new mongoose.schema({
+const entrySchema = new mongoose.Schema({
   title: String,
   description: String,
   email: String,
