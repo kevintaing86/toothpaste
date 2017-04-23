@@ -4,8 +4,7 @@ const entrySchema = new mongoose.Schema({
   title: String,
   description: String,
   email: String,
-  link: String,
-  created_at: { type: Date, default: Date.now }
+  link: String
 });
 
 const Entry = mongoose.model('Entry', entrySchema);

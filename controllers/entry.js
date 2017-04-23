@@ -18,7 +18,7 @@ exports.postNewEntry = (req, res) => {
 
   newEntry.save((err) => {
     if(err){
-      res.sendStatus(400); 
+      res.status(400).send(err);
     }
     res.sendStatus(201);
   });
