@@ -1,0 +1,72 @@
+<html><head><link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="shared-styles.html">
+
+</head><body><dom-module id="tp-entries">
+  <template>
+    <style include="shared-styles">
+      :host {
+        --app-primary-color: #42a5f4;
+        --app-primary-light: #80d6ff;
+        --app-primary-dark: #0077c1;
+        --app-primary-alt:#cfd8dc;
+        --app-secondary-color: #ff5252;
+        --app-secondary-light: #ff867f;
+        --app-secondary-dark: #c50e29;
+        --app-solid-black:black;
+        --app-text-secondary: #ffffff;
+        --app-text-primary: #000000;
+        display: block;
+
+        padding: 10px;
+      }
+      paper-button {
+        background-color: var(--app-secondary-color);
+        color: var(--app-text-secondary);
+      }
+      .card-actions {
+        border-top: 1px solid #e8e8e8;
+        padding: 10px 16px;
+        position:relative;
+        @apply(--paper-card-actions);
+      }
+    </style>
+    <template is="dom-repeat" items="[[entries]]">
+      <div class="card card-entry">
+        <div class="card-content">
+          <h1>{{item.title}}</h1>
+          <p>{{item.description}}</p>
+        </div>
+        <div class="card-actions">
+          <paper-button>View</paper-button>
+        </div>
+      </div>
+    </template>
+    <iron-ajax id="requestEntries" url="https://toothpaste2017.herokuapp.com/entries" params="{&quot;type&quot;:&quot;all&quot;}" handle-as="json" on-response="handleEntryRequest"></iron-ajax>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'tp-entries',
+      properties: {
+        entries: Array
+      },
+
+      ready: function() {
+        this.$.requestEntries.generateRequest();
+
+        this.entries = [
+            {title: 'HackWesTX', description: 'BLAHBLAHBLAHBLAH'},
+            {title: 'HackWesTX2', description: 'BLAHBLAHBLAHBLAH2'},
+            {title: 'HackWesTX3', description: 'BLAHBLAHBLAHBLAH3'},
+        ];
+     },
+
+     handleEntryRequest: function(data) {
+       this.entries = data.detail.response;
+     }
+    });
+  </script>
+</dom-module>
+</body></html>
