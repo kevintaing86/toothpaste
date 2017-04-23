@@ -5,6 +5,8 @@
     "src/tp-home.html",
     "src/tp-add.html",
     "src/tp-push.html",
+    "src/tp-entries.html",
+    "src/tp-entry.html",
     "src/tp-view404.html"
   ],
   "sourceGlobs": [

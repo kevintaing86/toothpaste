@@ -14,6 +14,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="shared-styles">
   <template>
     <style>
+      :host {
+        --app-primary-color: #42a5f4;
+        --app-primary-light: #80d6ff;
+        --app-primary-dark: #0077c1;
+        --app-primary-alt:#cfd8dc;
+        --app-secondary-color: #ff5252;
+        --app-secondary-light: #ff867f;
+        --app-secondary-dark: #c50e29;
+        --app-solid-black:black;
+        --app-text-secondary: #ffffff;
+        --app-text-primary: #000000;
+        display: block;
+      }
       .card {
         margin: 24px;
         padding: 16px;
@@ -37,8 +50,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       h1 {
         margin: 16px 0;
-        color: #212121;
+        color: var(--app-text-primary);
         font-size: 22px;
+      }
+      .card-entry {
+        /** text-align: center; **/
       }
     </style>
   </template>
