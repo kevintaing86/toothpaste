@@ -126,14 +126,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 'addentry.iron-form-error': '_formError',
             },
             _submit(event) {
-                this.$.getElementById('addentry').submit();
+                document.getElementById('addentry').submit();
             },
             _formSubmit: function(event) {
+                this.$.getElementById('addentry').submit();
                 console.log("Form was submitted");
             },
             _formPresubmit: function(event) {
                 console.log("Form is about to be submitted");
-                this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
+                this.querySelector('.output').innerHTML = JSON.stringify(event);
             },
             _formResponse: function(event) {
                 console.log('There was a response');
